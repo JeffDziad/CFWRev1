@@ -1,5 +1,7 @@
 <template>
-  <p>Contact</p>
+  <v-container>
+    <p>Contact</p>
+  </v-container>
 </template>
 
 <script>

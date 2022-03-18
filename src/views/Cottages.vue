@@ -1,5 +1,7 @@
 <template>
-  <p>Cottages</p>
+  <v-container>
+    <p>Cottages</p>
+  </v-container>
 </template>
 
 <script>

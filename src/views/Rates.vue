@@ -1,5 +1,7 @@
 <template>
-  <p>Rates and Terms</p>
+  <v-container>
+    <p>Rates and Terms</p>
+  </v-container>
 </template>
 
 <script>

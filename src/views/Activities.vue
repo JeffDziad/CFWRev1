@@ -1,5 +1,7 @@
 <template>
-  <p>Activities</p>
+  <v-container>
+    <p>Activities</p>
+  </v-container>
 </template>
 
 <script>
