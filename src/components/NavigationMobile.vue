@@ -94,7 +94,11 @@ export default {
   padding: 10px;
   position: absolute;
   width: 100%;
-  background-color: white;
+  background-color: rgba(136,136,136,0.2);
+  backdrop-filter: blur(30px);
   z-index: 5;
+  box-shadow: 0px 10px 77px 4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 10px 77px 4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 77px 4px rgba(0,0,0,0.75);
 }
 </style>

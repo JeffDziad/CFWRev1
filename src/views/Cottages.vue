@@ -1,10 +1,10 @@
 <template>
   <v-row>
     <v-col align="center">
-      <v-card max-width="800" elevation="10" outlineds style="border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
+      <v-card max-width="1000" elevation="10" outlineds style="border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
         <v-tabs v-model="cottage_tabs" background-color="transparent" grow>
-          <v-tab>Loyola Cottage</v-tab>
-          <v-tab>Marquette Cottage</v-tab>
+          <v-tab class="font-weight-bold text-h6">Loyola Cottage</v-tab>
+          <v-tab class="font-weight-bold text-h6">Marquette Cottage</v-tab>
         </v-tabs>
         <v-tabs-items v-model="cottage_tabs">
           <v-tab-item>

@@ -1,9 +1,10 @@
 <template>
-  <v-app>
+  <v-app style="background-color: #343D3F; padding-bottom: 20px;">
     <v-main>
       <div id="overlay">
         <navigation-desktop v-show="!mobile_mode"></navigation-desktop>
         <navigation-mobile v-show="mobile_mode"></navigation-mobile>
+        <br>
         <br>
         <transition  mode="out-in" enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="animate__animated animate__fadeOutRight">
           <router-view/>
