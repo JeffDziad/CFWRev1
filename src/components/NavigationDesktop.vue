@@ -8,7 +8,14 @@
               <v-row>
                 <v-col>
                   <v-hover v-slot="{hover}">
-                    <v-btn rounded outlined :width="nav_btn_size" :height="nav_btn_size" to="/rates" class="page_btn"><v-icon :size="nav_icon_size" :color="(hover) ? 'secondary' : 'primary'">mdi-currency-usd</v-icon></v-btn>
+                    <v-btn rounded outlined :width="nav_btn_size" :height="nav_btn_size" to="/rates" class="page_btn">
+                      <transition mode="in-out" enter-active-class="animate__animated animate__fadeIn">
+                        <v-img v-show="!hover" :src="rates"></v-img>
+                      </transition>
+                      <transition mode="in-out" enter-active-class="animate__animated animate__fadeIn">
+                        <v-img v-show="hover" :src="rates_hover"></v-img>
+                      </transition>
+                    </v-btn>
                   </v-hover>
                 </v-col>
               </v-row>
@@ -20,7 +27,14 @@
               <v-row>
                 <v-col>
                   <v-hover v-slot="{hover}">
-                    <v-btn rounded outlined :width="nav_btn_size" :height="nav_btn_size" to="/cottages" class="page_btn"><v-icon :size="nav_icon_size" :color="(hover) ? 'secondary' : 'primary'">mdi-home</v-icon></v-btn>
+                    <v-btn rounded outlined :width="nav_btn_size" :height="nav_btn_size" to="/cottages" class="page_btn">
+                      <transition mode="in-out" enter-active-class="animate__animated animate__fadeIn">
+                        <v-img v-show="!hover" :src="cottages"></v-img>
+                      </transition>
+                      <transition mode="in-out" enter-active-class="animate__animated animate__fadeIn">
+                        <v-img v-show="hover" :src="cottages_hover"></v-img>
+                      </transition>
+                    </v-btn>
                   </v-hover>
                 </v-col>
               </v-row>
@@ -39,7 +53,14 @@
               <v-row>
                 <v-col>
                   <v-hover v-slot="{hover}">
-                    <v-btn rounded outlined :width="nav_btn_size" :height="nav_btn_size" to="/contact" class="page_btn"><v-icon :size="nav_icon_size" :color="(hover) ? 'secondary' : 'primary'">mdi-email</v-icon></v-btn>
+                    <v-btn rounded outlined :width="nav_btn_size" :height="nav_btn_size" to="/contact" class="page_btn">
+                      <transition mode="in-out" enter-active-class="animate__animated animate__fadeIn">
+                        <v-img v-show="!hover" :src="contact"></v-img>
+                      </transition>
+                      <transition mode="in-out" enter-active-class="animate__animated animate__fadeIn">
+                        <v-img v-show="hover" :src="contact_hover"></v-img>
+                      </transition>
+                    </v-btn>
                   </v-hover>
                 </v-col>
               </v-row>
@@ -51,7 +72,14 @@
               <v-row>
                 <v-col>
                   <v-hover v-slot="{hover}">
-                    <v-btn rounded outlined :width="nav_btn_size" :height="nav_btn_size" to="/activities" class="page_btn"><v-icon :size="nav_icon_size" :color="(hover) ? 'secondary' : 'primary'">mdi-sail-boat</v-icon></v-btn>
+                    <v-btn rounded outlined :width="nav_btn_size" :height="nav_btn_size" to="/activities" class="page_btn">
+                      <transition mode="in-out" enter-active-class="animate__animated animate__fadeIn">
+                        <v-img v-show="!hover" :src="activities"></v-img>
+                      </transition>
+                      <transition mode="in-out" enter-active-class="animate__animated animate__fadeIn">
+                        <v-img v-show="hover" :src="activities_hover"></v-img>
+                      </transition>
+                    </v-btn>
                   </v-hover>
                 </v-col>
               </v-row>
@@ -75,8 +103,19 @@ export default {
     return {
       nav_btn_size: 130,
       nav_icon_size: 120,
+      activities: require('../assets/icons/page_icons/activities.png'),
+      activities_hover: require('../assets/icons/page_icons/activities_hover.png'),
+      cottages: require('../assets/icons/page_icons/cabins.png'),
+      cottages_hover: require('../assets/icons/page_icons/cabins_hover.png'),
+      contact: require('../assets/icons/page_icons/contact.png'),
+      contact_hover: require('../assets/icons/page_icons/contact_hover.png'),
+      rates: require('../assets/icons/page_icons/rates.png'),
+      rates_hover: require('../assets/icons/page_icons/rates_hover.png')
     }
   },
+  computed: {
+
+  }
 }
 </script>
 
