@@ -2,7 +2,7 @@
   <div>
     <canvas ref="logo_canvas" id="logo_canvas"></canvas>
     <router-link to="/">
-      <v-img ref="logo" :src="logo_src" width="500"></v-img>
+      <v-img ref="logo" :src="logo_src" width="500" @click="$emit('logo_clicked', null);"></v-img>
     </router-link>
   </div>
 </template>
