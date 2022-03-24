@@ -21,7 +21,7 @@
               </v-col>
             </v-row>
             <v-row>
-              <v-col><v-card shaped class="white--text" color="primary" width="150"><span>Rates and Terms</span></v-card></v-col>
+              <v-col><v-card shaped class="white--text" style="border: #f17105 solid 2px !important;" color="primary" width="150"><span>Rates and Terms</span></v-card></v-col>
             </v-row>
           </v-col>
           <v-col align="center">
@@ -40,7 +40,7 @@
               </v-col>
             </v-row>
             <v-row>
-              <v-col><v-card shaped class="white--text" color="primary" width="150"><span>Cottages</span></v-card></v-col>
+              <v-col><v-card shaped class="white--text" style="border: #f17105 solid 2px !important;" color="primary" width="150"><span>Cottages</span></v-card></v-col>
             </v-row>
           </v-col>
           <v-col align="center">
@@ -59,7 +59,7 @@
               </v-col>
             </v-row>
             <v-row>
-              <v-col><v-card shaped class="white--text" color="primary" width="150"><span>Contact Us!</span></v-card></v-col>
+              <v-col><v-card shaped class="white--text" style="border: #f17105 solid 2px !important;" color="primary" width="150"><span>Contact Us!</span></v-card></v-col>
             </v-row>
           </v-col>
           <v-col align="center">
@@ -78,7 +78,7 @@
               </v-col>
             </v-row>
             <v-row>
-              <v-col><v-card shaped class="white--text" color="primary" width="150"><span>Activities</span></v-card></v-col>
+              <v-col><v-card shaped class="white--text" style="border: #f17105 solid 2px !important;" color="primary" width="150"><span>Activities</span></v-card></v-col>
             </v-row>
           </v-col>
         </v-row>

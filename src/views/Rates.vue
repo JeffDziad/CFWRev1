@@ -5,7 +5,7 @@
         <v-toolbar color="primary" flat dark>
           <v-toolbar-title>Vrbo Calendar</v-toolbar-title>
         </v-toolbar>
-        <v-tabs vertical>
+        <v-tabs>
           <v-tab>Loyola Calendar</v-tab>
           <v-tab>Marquette Calendar</v-tab>
           <v-tab-item>

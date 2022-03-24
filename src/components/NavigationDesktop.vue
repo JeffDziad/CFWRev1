@@ -20,7 +20,7 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col><v-card shaped class="white--text" color="primary" width="150"><span>Rates and Terms</span></v-card></v-col>
+                <v-col><v-card shaped class="white--text" style="border: #f17105 solid 2px !important;" color="primary" width="150"><span>Rates and Terms</span></v-card></v-col>
               </v-row>
             </v-col>
             <v-col align="center">
@@ -39,7 +39,7 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col><v-card shaped class="white--text" color="primary" width="150"><span>Cottages</span></v-card></v-col>
+                <v-col><v-card shaped class="white--text" style="border: #f17105 solid 2px !important;" color="primary" width="150"><span>Cottages</span></v-card></v-col>
               </v-row>
             </v-col>
           </v-row>
@@ -50,8 +50,9 @@
           <br>
           <transition enter-active-class="animate__animated animate__zoomInUp" leave-active-class="animate__animated animate__zoomOut">
             <div ref="subtitle" v-show="atHome">
-              <div class="dark fire">
-                <p style="font-size: 25px; font-family: 'Bungee', serif; position: relative; z-index: 0;">A fun-filled and relaxing get-a-way on the shore of Fence Lake</p>
+              <div id="logo_subtitle">
+                <p style="font-size: 35px; font-family: 'Bungee', serif; z-index: 0;">A fun-filled and relaxing get-a-way on the shore of Fence Lake</p>
+                <p style="font-size: 35px; font-family: 'Bungee', serif; z-index: 0;">A fun-filled and relaxing get-a-way on the shore of Fence Lake</p>
               </div>
 
             </div>
@@ -76,7 +77,7 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col><v-card shaped class="white--text" color="primary" width="150"><span>Contact Us!</span></v-card></v-col>
+                <v-col><v-card shaped class="white--text" style="border: #f17105 solid 2px !important;" color="primary" width="150"><span>Contact Us!</span></v-card></v-col>
               </v-row>
             </v-col>
             <v-col align="center">
@@ -95,7 +96,7 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col><v-card shaped class="white--text" color="primary" width="150"><span>Activities</span></v-card></v-col>
+                <v-col><v-card shaped class="white--text" style="border: #f17105 solid 2px !important;" color="primary" width="150"><span>Activities</span></v-card></v-col>
               </v-row>
             </v-col>
           </v-row>
@@ -155,6 +156,52 @@ export default {
   border: rgba(0, 0, 0, 0) solid 2px;
 }
 
+#logo_subtitle {
+  position: relative;
+}
 
+#logo_subtitle p {
+  position: absolute;
+}
 
+#logo_subtitle p:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+}
+
+#logo_subtitle p:nth-child(2) {
+  color: #0076CE;
+  animation: animate 25s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+        0% 2%,
+        16% 2%,
+        33% 1%,
+        70% 2%,
+        100% 1%,
+        100% 100%,
+        120% 100%,
+        120% 120%,
+        0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+        0% 120%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        0% 100%
+    );
+  }
+}
 </style>

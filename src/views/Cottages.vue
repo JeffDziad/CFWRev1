@@ -8,16 +8,29 @@
         </v-tabs>
         <v-tabs-items v-model="cottage_tabs">
           <v-tab-item>
+            <v-dialog v-model="loyolaViewer" fullscreen>
+              <div style="width: 100%; height: 100%; backdrop-filter: blur(10px); overflow: hidden;">
+                <v-btn absolute icon large @click.stop="loyolaViewer = false" style="top: 10px; left: 10px; background-color: #fff; z-index: 3;"><v-icon color="red">mdi-close</v-icon></v-btn>
+                <v-row justify="center">
+                  <v-col align="center">
+                    <v-carousel height="100vh" ref="loyola_viewer_carousel">
+                      <v-carousel-item v-for="(item, i) in loyola_imgs" :key="i" style="background-color: rgba(0, 0, 0, 0.15)">
+                        <v-img eager :src="item.src" contain style="height: 100%; width: auto;"></v-img>
+                      </v-carousel-item>
+                    </v-carousel>
+                  </v-col>
+                </v-row>
+              </div>
+            </v-dialog>
             <!-- Loyola -->
             <v-carousel hide-delimiters>
+              <v-btn absolute large icon style="z-index: 2; left: 10px; top: 10px; background-color: white;" @click="loyolaLargeViewer"><v-icon color="black">mdi-resize</v-icon></v-btn>
               <v-carousel-item v-for="(item, i) in loyola_imgs" :key="i" style="background-color: rgba(0, 0, 0, 0.15)">
-                <v-img :src="item.src" contain style="height: 100%"></v-img>
+                <v-img eager :src="item.src" contain style="height: 100%; width: auto;"></v-img>
               </v-carousel-item>
             </v-carousel>
             <v-container class="pa-5">
-
               <v-col><p class="text-h3 text-left red-grad white--text">&nbsp;Description</p></v-col>
-
               <p class="text-left indent">
                 Enjoy our rustic, cozy, and clean, 3 season Northwoods cottage with 2 Bedrooms, (1 Queens, 1 Twin/Full Bunkbed and trundle bed, sleeps 6). Dine on the full wrap-around deck with shaded patio furniture.  Prepare your favorite meals in your beautiful, fully equipped kitchen with dishwasher and an ice maker/filtered water refrigerator.  For the chilly nights, enjoy your free standing wood pellet fireplace in living room for added romance!  Gather around the private fire pit ( with free wood), with lawn chairs. As an added bonus, enjoy free streaming TV and high-speed Wi-Fi internet!
               </p>
@@ -35,9 +48,7 @@
               </p>
               <hr>
               <br>
-
               <v-col><p class="text-h3 text-left orange-grad white--text">&nbsp;Amenities</p></v-col>
-
               <v-row>
                 <v-col>
                   <v-row v-for="(item, i) in amenities" :key="i" justify="center" align="center">
@@ -53,9 +64,7 @@
               <br>
               <hr>
               <br>
-
               <v-col><p class="text-h3 text-left yellow-grad white--text">&nbsp;Unique Features</p></v-col>
-
               <v-row>
                 <v-col>
                   <p class="text-left indent">
@@ -67,15 +76,28 @@
           </v-tab-item>
           <v-tab-item>
             <!-- Marquette -->
+            <v-dialog v-model="marquetteViewer" fullscreen>
+              <div style="width: 100%; height: 100%; backdrop-filter: blur(10px); overflow: hidden;">
+                <v-btn absolute icon large @click.stop="marquetteViewer = false" style="top: 10px; left: 10px; background-color: #fff; z-index: 3;"><v-icon color="red">mdi-close</v-icon></v-btn>
+                <v-row justify="center">
+                  <v-col align="center">
+                    <v-carousel height="100vh">
+                      <v-carousel-item v-for="(item, i) in marquette_imgs" :key="i" style="background-color: rgba(0, 0, 0, 0.15)">
+                        <v-img eager :src="item.src" contain style="height: 100%"></v-img>
+                      </v-carousel-item>
+                    </v-carousel>
+                  </v-col>
+                </v-row>
+              </div>
+            </v-dialog>
             <v-carousel hide-delimiters>
+              <v-btn absolute large icon style="z-index: 2; left: 10px; top: 10px; background-color: white;" @click="marquetteLargeViewer"><v-icon color="black">mdi-resize</v-icon></v-btn>
               <v-carousel-item v-for="(item, i) in marquette_imgs" :key="i" style="background-color: rgba(0, 0, 0, 0.15)">
-                <v-img :src="item.src" contain style="height: 100%"></v-img>
+                <v-img eager :src="item.src" contain style="height: 100%"></v-img>
               </v-carousel-item>
             </v-carousel>
             <v-container class="pa-5">
-
               <v-col><p class="text-h3 text-left red-grad white--text">&nbsp;Description</p></v-col>
-
               <p class="text-left indent">
                 Enjoy our rustic, cozy, and clean, 4 season Northwoods cottage with 2 Bedrooms, (1 Queens, 1 Twin/Full Bunkbed and sleeper sofa, sleeps 6). Dine in on a 6-chair dining set or a 4-chair snack bar, or outdoors on your own patio with octagonal picnic table.  Prepare your favorite meals in your beautiful, fully equipped kitchen with dishwasher and an ice maker/filtered water refrigerator.  Gather around the private fire pit (with free wood), with lawn chairs. As an added bonus, enjoy free streaming TV and high-speed Wi-Fi internet!
               </p>
@@ -93,9 +115,7 @@
               </p>
               <hr>
               <br>
-
               <v-col><p class="text-h3 text-left orange-grad white--text">&nbsp;Amenities</p></v-col>
-
               <v-row>
                 <v-col>
                   <v-row v-for="(item, i) in amenities" :key="i" justify="center" align="center">
@@ -111,9 +131,7 @@
               <br>
               <hr>
               <br>
-
               <v-col><p class="text-h3 text-left yellow-grad white--text">&nbsp;Unique Features</p></v-col>
-
               <v-row>
                 <v-col>
                   <p class="text-left indent">
@@ -134,6 +152,8 @@ export default {
   name: "Cottages",
   data: function() {
     return {
+      loyolaViewer: false,
+      marquetteViewer: false,
       cottage_tabs: null,
       amenities: [
         {str: "Dogs Allowed", icon: require('../assets/icons/dog.png')},
@@ -147,7 +167,7 @@ export default {
         {str: "ATV/Snowmobile Trail", icon: require('../assets/icons/trail.png')},
         {str: "Shared Paddle Boat for 3 included", icon: require('../assets/icons/paddle_boat.png')},
         {str: "Two Shared Kayaks included", icon: require('../assets/icons/kayak.png')},
-        {str: "Dine out patio with picnic table", icon: require('../assets/icons/dog.png')},
+        {str: "Dine out patio with picnic table", icon: require('../assets/icons/table.png')},
         {str: "High-speed Wi-Fi Internet", icon: require('../assets/icons/wifi.png')},
         {str: "Free Streaming TV", icon: require('../assets/icons/stream.png')},
         {str: "Washer and Dryer", icon: require('../assets/icons/washing.png')},
@@ -194,6 +214,14 @@ export default {
         {src: require('../assets/Loyola/17.jpg')},
         {src: require('../assets/Loyola/18.jpg')},
       ]
+    }
+  },
+  methods: {
+    loyolaLargeViewer() {
+      this.loyolaViewer = true;
+    },
+    marquetteLargeViewer() {
+      this.marquetteViewer = true;
     }
   }
 }

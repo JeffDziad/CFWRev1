@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background-color: #343D3F; padding-bottom: 20px;">
+  <v-app style="background-color: #343D3F;">
     <v-main>
       <div id="overlay">
         <navigation-desktop v-show="!mobile_mode"></navigation-desktop>
@@ -10,7 +10,7 @@
           <router-view/>
         </transition>
       </div>
-      <v-img :src="sunset_long_src" style="position: absolute; top: 0; left: 0; z-index: 0; width: 100%"></v-img>
+      <v-img eager :src="sunset_long_src" style="position: absolute; height: 100vh; top: 0; left: 0; z-index: 0; width: 100%"></v-img>
     </v-main>
   </v-app>
 </template>
@@ -45,5 +45,6 @@ export default {
 #overlay {
   position: relative;
   z-index: 2;
+  padding-bottom: 20px;
 }
 </style>
